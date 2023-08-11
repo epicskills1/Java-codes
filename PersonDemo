@@ -1,0 +1,44 @@
+//create a class person with name, dob, use getter and setter
+import java.util.*;
+
+class Person {
+    private String name;
+    private String dob;
+
+    Person() {
+        name = "";
+        dob = "";
+    }
+
+    void setName(String name) {
+        this.name = name;
+    }
+    
+    void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    String getName() {
+        return this.name;
+    }
+
+    String getDob() {
+        return this.dob;
+    }
+}
+
+public class PersonDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name of the person: ");
+        String n = sc.nextLine();
+        System.out.println("Enter the Date of birth: ");
+        String d = sc.nextLine();
+        Person person1 = new Person();
+        person1.setDob(d);
+        person1.setName(n);
+        System.out.println("The name of person 1 is "+person1.getName());
+        System.out.println("The date of birth of person 1 is "+person1.getDob());
+        sc.close();
+    }
+}
