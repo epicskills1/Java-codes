@@ -1,0 +1,43 @@
+class Box {
+    double length;
+    double breadth;
+    double height;
+
+    Box() {
+        length = 0.0;
+        breadth = 0.0;
+        height = 0.0;
+    }
+
+    Box(double length, double breadth, double height) {
+        this.length = length;
+        this.breadth = breadth;
+        this.height = height;
+    }
+
+    Box(Box c) {
+        this.breadth = c.breadth;
+        this.height = c.height;
+        this.length = c.length;
+    }
+
+    public double volume() {
+        return length*breadth*height;
+    }
+}
+
+public class BoxDemo {
+    public static void main(String[] args) {
+        // Box box1 = new Box();
+        // box1.breadth = 10.2;
+        // box1.height = 5.3;
+        // box1.length = 6.7;
+        // System.out.println(box1.volume());
+        Box box2 = new Box();
+        System.out.println(box2.volume());
+        Box box3 = new Box(10.6, 3.4, 5.7);
+        System.out.println(box3.volume());
+        Box box4 = new Box(box3);
+        System.out.println(box4.volume());
+    }
+}
