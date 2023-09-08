@@ -1,0 +1,112 @@
+public class Array{
+int si[];
+char sc[];
+String ss[];
+int top;
+Array(int size){
+si=new int[size];
+top=-1;
+}
+
+Array(char size){
+sc=new char[Integer.parseInt(String.valueOf(size))];
+top=-1;
+}
+Array(String size){
+ss=new String[Integer.parseInt(size)];
+top=-1;
+}
+void push(int data){
+if(top==si.length-1){
+System.out.println("Stack is Full");
+}else{
+top++;
+si[top]=data;
+System.out.println(data+" is pushed into the stack!");
+}
+}
+void push(String data){
+if(top==ss.length-1){
+System.out.println("Stack is Full");
+}else{
+top++;
+ss[top]=data;
+System.out.println(data+" is pushed into the stack!");
+}
+}
+void push(char data){
+if(top==sc.length-1){
+System.out.println("Stack is Full");
+}else{
+top++;
+sc[top]=data;
+System.out.println(data+" is pushed into the stack!");
+}
+}
+void pop_i(){
+if(top==-1){
+System.out.println("Stack is Empty");
+}else{
+System.out.println(si[top]+" is popped from the stack!");
+top--;
+}
+}
+void pop_c(){
+if(top==-1){
+System.out.println("Stack is Empty");
+}else{
+System.out.println(sc[top]+" is popped from the stack!");
+top--;
+}
+}
+void pop_s(){
+if(top==-1){
+System.out.println("Stack is Empty");
+}else{
+System.out.println(ss[top]+" is popped from the stack!");
+top--;
+}
+}
+void display(String type){
+System.out.print("The Stack is : ");
+if(type=="int"){
+for(int i=0;i<=top;i++){
+System.out.print(si[i]+" ");
+}
+} else if(type=="char"){
+for(int i=0;i<=top;i++){
+System.out.print(sc[i]+" ");
+}
+}else if(type=="string"){
+for(int i=0;i<=top;i++){
+System.out.print(ss[i]+" ");
+}
+}
+}
+public class ArrayMain{
+public static void main(String args[]){
+Array s1=new Array(5);
+Array s2=new Array('5');
+Array s3=new Array("5");
+s1.push(10);
+s1.push(20);
+s1.pop_i();
+s1.push(30);
+s1.display("int");
+System.out.println();
+s2.push('A');
+s2.push('B');
+s2.push('C');
+s2.pop_c();
+s2.display("char");
+System.out.println();
+s3.push("Apple");
+s3.pop_s();
+s3.push("Ball");
+s3.push("Cat");
+
+s3.display("string");
+System.out.println();
+}
+}
+}
